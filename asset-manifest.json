@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/reducer_bg-animation/static/css/main.073c9b0a.css",
+    "main.js": "/reducer_bg-animation/static/js/main.97d96252.js",
+    "static/js/787.66853d5d.chunk.js": "/reducer_bg-animation/static/js/787.66853d5d.chunk.js",
+    "index.html": "/reducer_bg-animation/index.html",
+    "main.073c9b0a.css.map": "/reducer_bg-animation/static/css/main.073c9b0a.css.map",
+    "main.97d96252.js.map": "/reducer_bg-animation/static/js/main.97d96252.js.map",
+    "787.66853d5d.chunk.js.map": "/reducer_bg-animation/static/js/787.66853d5d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.97d96252.js"
+  ]
+}
