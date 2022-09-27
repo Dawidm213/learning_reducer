@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState, useReducer } from "react";
 import Todo from "./Todo.js";
-import { InputContainer, GlobalStyles } from "./styles.js";
+import { InputContainer, GlobalStyles, Box1, Box2, IncDecBtn } from "./styles.js";
 import { motion } from "framer-motion";
 
 export const ACTIONS = {
@@ -58,9 +58,14 @@ function App() {
   }
 
   function handleSubmit(e) {
-    e.preventDefault();
-    dispatch2({ type: ACTIONS.ADD_TODO, payload: { name: name } });
-    setName("");
+    if(name ===  ''){
+      e.preventDefault();
+
+    }else{
+      e.preventDefault();
+      dispatch2({ type: ACTIONS.ADD_TODO, payload: { name: name } });
+      setName("");
+    }
   }
 
   console.log(todos);
@@ -96,36 +101,42 @@ function App() {
           ></motion.path>
         </g>
       </svg>
-      <div>
-        <button
-          onClick={() => {
-            decrement();
-          }}
-        >
-          -
-        </button>
-        <span>{state1.count}</span>
-        <button
-          onClick={() => {
-            increment();
-          }}
-        >
-          +
-        </button>
-      </div>
+      <Box1>
+        <IncDecBtn>
+          <button
+            onClick={() => {
+              decrement();
+            }}
+          >
+            -
+          </button>
+          <span>{state1.count}</span>
+          <button
+            onClick={() => {
+              increment();
+            }}
+          >
+            +
+          </button>
+        </IncDecBtn>
 
-      <InputContainer>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </form>
-      </InputContainer>
-      {todos.map((todo) => {
-        return <Todo key={todo.id} todo={todo} dispatch2={dispatch2} />;
-      })}
+          <InputContainer>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Name" 
+              />
+              <label for="name">Name</label>
+            </form>
+          </InputContainer>
+        </Box1>
+        <Box2 data={todos.length}>
+          {todos.map((todo) => {
+            return <Todo key={todo.id} todo={todo} dispatch2={dispatch2} />;
+          })}
+        </Box2>
     </>
   );
 }
